@@ -33,7 +33,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 12px 0;
 }
 
@@ -45,7 +45,7 @@ header {
 
 .hamburger {
   display: none;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: white;
   background: none;
   border: none;
@@ -240,8 +240,9 @@ footer {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .nav-bar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 0;
   }
 
@@ -251,10 +252,7 @@ footer {
 
   .hamburger {
     display: block;
-    font-size: 1.5rem;
-    padding: 4px 10px;
-    background: none;
-    border: none;
+    order: 2;
   }
 
   .nav-links {
@@ -277,7 +275,6 @@ footer {
 
   .nav-links li a {
     display: block;
-    width: 100%;
     padding: 12px 20px;
     font-size: 0.95rem;
     text-align: left;
