@@ -38,6 +38,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -75,6 +76,13 @@ header {
   border: none;
   color: white;
   cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
 }
 
 /* Hero */
@@ -280,23 +288,24 @@ body.dark-mode .checkmark {
   color: #7FDBFF;
 }
 
-/* Responsive */
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .nav-bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 10px;
+  .hamburger {
+    display: block;
   }
 
   .nav-links {
     flex-direction: column;
+    background-color: #001f3f;
+    width: 100%;
+    display: none;
+    margin-top: 10px;
     gap: 10px;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .hero-content h2 {
