@@ -24,14 +24,9 @@ body {
 header {
   background-color: #001f3f;
   color: white;
-  padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 100;
-}
-
-.header-wrapper {
-  background-color: #001f3f;
 }
 
 .nav-bar {
@@ -39,50 +34,40 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding: 12px 0;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 600;
   color: white;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 25px;
 }
 
 .nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
   color: #7FDBFF;
-}
-
-#darkModeToggle {
-  font-size: 1.2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: white;
 }
 
 /* Hero */
@@ -254,39 +239,61 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .hamburger {
-  display: block;
-}
-
-.nav-links {
-  flex-direction: column;
-  background-color: #001f3f;
-  width: 100%;
-  display: none;
-  gap: 8px;
-  padding: 10px 0;
-  margin-top: 10px;
-}
-
-.nav-links li a {
-  padding: 10px 20px;
-  font-size: 1rem;
-  display: block;
-  width: 100%;
-}
-
-.nav-links.active {
-  display: flex;
-}
-
-
-  .hero-content h2 {
-    font-size: 2rem;
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
   }
 
-  #darkModeToggle {
-    margin-left: 0;
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    padding: 4px 10px;
+    background: none;
+    border: none;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #001f3f;
     margin-top: 10px;
+    padding: 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .btn-primary {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  body {
+    font-size: 15px;
   }
 
   .about-container {
