@@ -169,6 +169,8 @@ header {
   border-left: 4px solid #0074D9;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   animation: fadeInUp 0.7s ease;
+  word-break: break-word;
+
 }
 
 .profile-box h4 {
@@ -194,6 +196,8 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
   margin-top: 30px;
+  word-break: break-word;
+
 }
 
 .contact-item {
