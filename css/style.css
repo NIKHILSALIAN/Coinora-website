@@ -338,3 +338,24 @@ footer a {
     font-size: 1rem;
   }
 }
+
+
+
+/*BACKGROUND VIDEO*/
+.hero {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+
