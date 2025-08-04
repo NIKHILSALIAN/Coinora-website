@@ -1,8 +1,8 @@
-/* Import Fonts */
+/* Imports */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
 
-/* Reset & Base */
+/* === RESET & BASE STYLES === */
 * {
   margin: 0;
   padding: 0;
@@ -11,10 +11,9 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: 17px;
   background-color: #f9f9f9;
   color: #fff;
-  line-height: 1.75;
+  line-height: 1.6;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -25,32 +24,10 @@ body {
   padding: 40px 0;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  line-height: 1.4;
-  color: #fff;
-}
-
-h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.05rem;
-  margin-bottom: 15px;
-  color: #eaeaea;
-}
-
-/* === Header === */
+/* === HEADER === */
 header {
   background-color: #001f3f;
+  color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -71,20 +48,6 @@ header {
   color: white;
 }
 
-.hamburger {
-  font-size: 1.8rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: none;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1001;
-}
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -103,24 +66,45 @@ header {
   color: #7FDBFF;
 }
 
-/* Hero */
+.hamburger {
+  font-size: 1.8rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+/* === HERO SECTION === */
 .hero {
   background: linear-gradient(to right, #0074D9, #7FDBFF);
   text-align: center;
   padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .hero-content h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   color: white;
+  animation: fadeInUp 1s ease;
 }
 
 .hero-content p {
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   color: white;
+  animation: fadeInUp 1.2s ease;
 }
 
-/* Button */
+/* === BUTTON === */
 .btn-primary {
   display: inline-block;
   background-color: #001f3f;
@@ -130,6 +114,7 @@ header {
   border-radius: 6px;
   font-weight: 600;
   transition: all 0.3s ease;
+  animation: fadeInUp 1.4s ease;
 }
 
 .btn-primary:hover {
@@ -138,19 +123,17 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Fullscreen Section */
+/* === FULLSCREEN SECTION === */
 .fullscreen-section {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   padding: 40px 20px;
   text-align: center;
 }
 
-/* Company Profile */
-/* Fix white text on light background for company section */
+/* === COMPANY PROFILE SECTION === */
 .about-section,
 .contact-section {
   background-color: #f9f9f9;
@@ -166,7 +149,12 @@ header {
 
 .company-intro {
   color: #444;
+  max-width: 850px;
+  margin: 0 auto 40px auto;
+  font-size: clamp(1rem, 1.1vw, 1.15rem);
+  line-height: 1.7;
 }
+
 .company-profile-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -180,6 +168,7 @@ header {
   border-radius: 10px;
   border-left: 4px solid #0074D9;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.7s ease;
 }
 
 .profile-box h4 {
@@ -199,7 +188,7 @@ header {
   grid-column: 1 / -1;
 }
 
-/* Contact Section */
+/* === CONTACT SECTION === */
 .contact-box {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -214,6 +203,7 @@ header {
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: 0.3s ease;
+  animation: fadeInUp 0.9s ease;
 }
 
 .contact-item:hover {
@@ -236,7 +226,7 @@ header {
   text-decoration: underline;
 }
 
-/* Footer */
+/* === FOOTER === */
 footer {
   background-color: #001f3f;
   color: white;
@@ -251,7 +241,7 @@ footer a {
   text-decoration: none;
 }
 
-/* Cursor Animation */
+/* === TYPING CURSOR === */
 .cursor {
   display: inline-block;
   animation: blink 1s infinite;
@@ -262,7 +252,7 @@ footer a {
   25%, 75% { opacity: 0; }
 }
 
-/* Preloader */
+/* === PRELOADER === */
 #preloader {
   position: fixed;
   top: 0;
@@ -290,7 +280,19 @@ footer a {
   100% { transform: rotate(360deg); }
 }
 
-/* Responsive */
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* === RESPONSIVE NAVBAR === */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -320,7 +322,7 @@ footer a {
   }
 
   .hero-content h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .btn-primary {
@@ -332,5 +334,3 @@ footer a {
     font-size: 1rem;
   }
 }
-
-/* AOS fade & zoom are handled by AOS.js classes */
