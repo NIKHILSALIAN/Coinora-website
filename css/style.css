@@ -11,7 +11,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #000;
+  background-color: #f9f9f9;
   color: #fff;
   line-height: 1.6;
   transition: background 0.3s, color 0.3s;
@@ -26,13 +26,12 @@ body {
 
 /* === HEADER === */
 header {
-  background-color: #000;
+  background-color: #001f3f;
   color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
-  border-bottom: 2px solid #0074D9; /* blue accent */
 }
 
 .nav-bar {
@@ -64,7 +63,7 @@ header {
 }
 
 .nav-links li a:hover {
-  color: #0074D9;
+  color: #7FDBFF;
 }
 
 .hamburger {
@@ -83,9 +82,7 @@ header {
 
 /* === HERO SECTION === */
 .hero {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+  background: linear-gradient(to right, #0074D9, #7FDBFF);
   text-align: center;
   padding: 100px 20px;
   min-height: 100vh;
@@ -103,26 +100,14 @@ header {
 
 .hero-content p {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
-  color: #ccc;
+  color: white;
   animation: fadeInUp 1.2s ease;
-}
-
-/* Background Video */
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.35;
 }
 
 /* === BUTTON === */
 .btn-primary {
   display: inline-block;
-  background-color: #0074D9;
+  background-color: #001f3f;
   color: white;
   padding: 12px 25px;
   text-decoration: none;
@@ -133,9 +118,9 @@ header {
 }
 
 .btn-primary:hover {
-  background-color: #005fa3;
+  background-color: #004080;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* === FULLSCREEN SECTION === */
@@ -151,55 +136,58 @@ header {
 /* === COMPANY PROFILE SECTION === */
 .about-section,
 .contact-section {
-  background-color: #111; /* dark background */
-  color: #eee;
+  background-color: #f9f9f9;
+  color: #222;
 }
 
 .about-section h2,
 .contact-section h2,
 .about-section p,
 .contact-section p {
-  color: #fff;
+  color: #222;
 }
 
 .company-intro {
-  color: #ccc;
+  color: #444;
   max-width: 850px;
   margin: 0 auto 40px auto;
-  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-  line-height: 1.8;
+  font-size: clamp(1rem, 1.1vw, 1.15rem);
+  line-height: 1.7;
 }
 
-/* Single Profile Card */
 .company-profile-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
 .profile-box {
-  background-color: #000;
-  color: #ddd;
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid #0074D9;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #0074D9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   animation: fadeInUp 0.7s ease;
-  max-width: 800px;
-  width: 100%;
-  text-align: left;
+  word-break: break-word;
+
 }
 
 .profile-box h4 {
-  margin-bottom: 8px;
-  font-size: 1.2rem;
-  color: #0074D9;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #001f3f;
 }
 
 .profile-box p {
-  margin: 0 0 15px 0;
-  font-size: 1.05rem;
-  color: #ccc;
-  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.profile-box.full-width {
+  grid-column: 1 / -1;
 }
 
 /* === CONTACT SECTION === */
@@ -208,32 +196,33 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
   margin-top: 30px;
+  word-break: break-word;
+
 }
 
 .contact-item {
-  background-color: #000;
-  color: #ccc;
+  background-color: #fff;
+  color: #333;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #0074D9;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: 0.3s ease;
   animation: fadeInUp 0.9s ease;
 }
 
 .contact-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .contact-item h4,
 .contact-item p,
 .contact-item a {
-  color: #fff;
+  color: #001f3f;
 }
 
 .contact-item p a {
-  color: #7FDBFF;
+  color: #0074D9;
   text-decoration: none;
 }
 
@@ -243,28 +232,17 @@ header {
 
 /* === FOOTER === */
 footer {
-  background-color: #000;
+  background-color: #001f3f;
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 10px 0;
   font-size: 0.95rem;
-  line-height: 1.6;
-  border-top: 2px solid #0074D9;
-}
-
-footer p {
-  margin: 5px 0;
-  color: #ccc;
+  line-height: 1.4;
 }
 
 footer a {
   color: #7FDBFF;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #fff;
 }
 
 /* === TYPING CURSOR === */
@@ -285,7 +263,7 @@ footer a:hover {
   left: 0;
   height: 100%;
   width: 100%;
-  background: #000;
+  background: #fff;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -293,7 +271,7 @@ footer a:hover {
 }
 
 .loader {
-  border: 6px solid #333;
+  border: 6px solid #f3f3f3;
   border-top: 6px solid #0074D9;
   border-radius: 50%;
   width: 50px;
@@ -331,7 +309,7 @@ footer a:hover {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #000;
+    background-color: #001f3f;
   }
 
   .nav-links.active {
@@ -360,3 +338,24 @@ footer a:hover {
     font-size: 1rem;
   }
 }
+
+
+
+/*BACKGROUND VIDEO*/
+.hero {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+
