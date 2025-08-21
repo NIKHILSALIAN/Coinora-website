@@ -16,6 +16,8 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
   color: #222;
   line-height: 1.6;
   transition: background 0.3s, color 0.3s;
-  padding-top: 80px;
+  /* ❌ Removed padding-top to fix white line */
 }
 
 .container {
@@ -50,6 +52,7 @@ header {
 
 header.scrolled {
   background: linear-gradient(90deg, #001a33, #00264d);
+  padding: 6px 0; /* shrink effect */
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
@@ -57,29 +60,44 @@ header.scrolled {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 24px;
+  padding: 18px 24px;
+  transition: all 0.3s ease;
+}
+
+header.scrolled .nav-bar {
+  padding: 10px 24px; /* shrink navbar height */
 }
 
 .logo {
   font-size: 2rem;
   font-weight: 700;
   color: white;
+  transition: font-size 0.3s ease;
+}
+
+header.scrolled .logo {
+  font-size: 1.6rem; /* shrink logo */
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 28px;
+  transition: all 0.3s ease;
 }
 
 .nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
-  transition: 0.3s;
+  font-size: 1.15rem;
+  transition: color 0.3s ease, font-size 0.3s ease;
   padding: 5px 0;
   position: relative;
+}
+
+header.scrolled .nav-links li a {
+  font-size: 1rem; /* shrink links */
 }
 
 .nav-links li a::after {
@@ -107,7 +125,7 @@ header.scrolled {
 }
 
 /* ================================
-   HERO SECTION
+   HERO SECTION (FIXED)
 ================================ */
 .hero {
   position: relative;
@@ -120,6 +138,7 @@ header.scrolled {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 80px; /* ✅ Push hero down to clear navbar */
 }
 
 .background-video {
@@ -132,6 +151,7 @@ header.scrolled {
   z-index: -1;
 }
 
+/* ✅ Slightly lighter blue overlay for cleaner look */
 .hero::before {
   content: "";
   position: absolute;
@@ -139,7 +159,7 @@ header.scrolled {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 64, 128, 0.45);
+  background: rgba(0, 153, 255, 0.38);
   z-index: 1;
 }
 
@@ -164,21 +184,24 @@ header.scrolled {
 
 .btn-primary {
   display: inline-block;
-  background: linear-gradient(135deg, #0074D9, #0056b3);
+  background: linear-gradient(135deg, #ff9800, #ffcc66); /* golden orange */
   color: white;
-  padding: 14px 28px;
+  padding: 14px 32px;
   text-decoration: none;
   border-radius: 10px;
   font-weight: 600;
+  font-size: 1.05rem;
   transition: all 0.3s ease;
   animation: fadeInUp 1.4s ease;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #0056b3, #003d80);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #e68900, #ffb84d);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
+
+
 
 /* ================================
    ABOUT / COMPANY PROFILE
