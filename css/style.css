@@ -22,9 +22,9 @@ body {
   color: #222;
   line-height: 1.6;
   transition: background 0.3s, color 0.3s;
-  /* ❌ Removed padding-top to fix white line */
 }
 
+/* Containers */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -46,7 +46,7 @@ header {
 
 header.scrolled {
   background: linear-gradient(90deg, #001a33, #00264d);
-  padding: 6px 0; /* shrink effect */
+  padding: 6px 0;
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
@@ -59,7 +59,7 @@ header.scrolled {
 }
 
 header.scrolled .nav-bar {
-  padding: 10px 24px; /* shrink navbar height */
+  padding: 10px 24px;
 }
 
 .logo {
@@ -70,7 +70,7 @@ header.scrolled .nav-bar {
 }
 
 header.scrolled .logo {
-  font-size: 1.6rem; /* shrink logo */
+  font-size: 1.6rem;
 }
 
 .nav-links {
@@ -91,7 +91,7 @@ header.scrolled .logo {
 }
 
 header.scrolled .nav-links li a {
-  font-size: 1rem; /* shrink links */
+  font-size: 1rem;
 }
 
 .nav-links li a::after {
@@ -118,7 +118,7 @@ header.scrolled .nav-links li a {
   display: none;
 }
 
-/* ================================ HERO SECTION (FIXED) ================================ */
+/* ================================ HERO SECTION ================================ */
 .hero {
   position: relative;
   overflow: hidden;
@@ -130,7 +130,7 @@ header.scrolled .nav-links li a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 80px; /* ✅ Push hero down to clear navbar */
+  margin-top: 80px;
 }
 
 .background-video {
@@ -143,7 +143,6 @@ header.scrolled .nav-links li a {
   z-index: -1;
 }
 
-/* ✅ Slightly lighter blue overlay for cleaner look */
 .hero::before {
   content: "";
   position: absolute;
@@ -176,7 +175,7 @@ header.scrolled .nav-links li a {
 
 .btn-primary {
   display: inline-block;
-  background: linear-gradient(135deg, #ff9800, #ffcc66); /* golden orange */
+  background: linear-gradient(135deg, #ff9800, #ffcc66);
   color: white;
   padding: 14px 32px;
   text-decoration: none;
@@ -186,17 +185,15 @@ header.scrolled .nav-links li a {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
-  animation: pulse 2s infinite; /* soft pulse */
+  animation: pulse 2s infinite;
 }
 
-/* Glow on hover */
 .btn-primary:hover {
   background: linear-gradient(135deg, #e68900, #ffb84d);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 0 20px rgba(255, 165, 0, 0.6), 0 0 40px rgba(255, 193, 7, 0.4);
 }
 
-/* Shimmer animation */
 .btn-primary::before {
   content: "";
   position: absolute;
@@ -204,11 +201,7 @@ header.scrolled .nav-links li a {
   left: -75%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
   transform: skewX(-25deg);
   transition: all 0.5s ease;
 }
@@ -218,13 +211,12 @@ header.scrolled .nav-links li a {
   transition: all 0.6s ease;
 }
 
-/* Soft pulse effect */
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.03); }
 }
 
-/* ================================ ABOUT / COMPANY PROFILE ================================ */
+/* ================================ ABOUT ================================ */
 .about-section {
   background-color: #f9f9f9;
   text-align: center;
@@ -299,7 +291,7 @@ header.scrolled .nav-links li a {
   color: #001f3f;
 }
 
-/* ================================ CONTACT SECTION ================================ */
+/* ================================ CONTACT ================================ */
 .contact-section {
   background: #f9f9f9;
   padding: 60px 20px;
@@ -347,8 +339,7 @@ header.scrolled .nav-links li a {
   margin-bottom: 10px;
 }
 
-.contact-item p,
-.contact-item a {
+.contact-item p, .contact-item a {
   color: #444;
   font-size: 1rem;
 }
@@ -464,3 +455,30 @@ footer {
 }
 
 html { scroll-behavior: smooth; }
+
+/* ================= Responsive Fixes ================= */
+video, img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-content h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.company-profile-grid,
+.contact-box {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.about-section,
+.contact-section {
+  padding: clamp(40px, 6vw, 80px) 20px;
+}
+
+.nav-bar { flex-wrap: wrap; }
