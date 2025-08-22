@@ -2,11 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
   <title>COINORA VDASP PRIVATE LIMITED</title>
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+  <style>
+    /* ✅ Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ✅ Fix offset so sections don’t hide under fixed navbar */
+    section {
+      scroll-margin-top: 80px;
+    }
+  </style>
 </head>
 <body>
 
@@ -41,7 +55,9 @@
     <div class="container hero-content">
       <h2><span id="typed-text"></span><span class="cursor">|</span></h2>
       <p>Empowering investors through digital finance, smart assets, and secure advisory solutions.</p>
-      <a href="#contact" class="btn-primary">Get in Touch</a>
+      
+      <!-- ✅ Updated Button (goes to About instead of Contact) -->
+      <a href="#about" class="btn-primary">Learn More</a>
     </div>
   </section>
 

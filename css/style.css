@@ -191,15 +191,47 @@ header.scrolled .nav-links li a {
   border-radius: 10px;
   font-weight: 600;
   font-size: 1.05rem;
+  position: relative;
+  overflow: hidden;
   transition: all 0.3s ease;
-  animation: fadeInUp 1.4s ease;
+  animation: pulse 2s infinite; /* soft pulse */
 }
 
+/* Glow on hover */
 .btn-primary:hover {
   background: linear-gradient(135deg, #e68900, #ffb84d);
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.6), 0 0 40px rgba(255, 193, 7, 0.4);
 }
+
+/* Shimmer animation */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 130%;
+  transition: all 0.6s ease;
+}
+
+/* Soft pulse effect */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
 
 
 
@@ -455,5 +487,23 @@ footer {
   .nav-links li a {
     padding: 12px 20px;
     display: block;
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Desktop mode on mobile fix */
+@media screen and (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    max-width: 100%;
+    width: 100%;
   }
 }
