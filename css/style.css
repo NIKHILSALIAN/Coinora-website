@@ -18,6 +18,7 @@ html, body {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;  /* ✅ FIX: stops white gap/scroll in desktop mode on mobile */
 }
 
 body {
@@ -231,9 +232,6 @@ header.scrolled .nav-links li a {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.03); }
 }
-
-
-
 
 /* ================================
    ABOUT / COMPANY PROFILE
@@ -490,11 +488,9 @@ footer {
   }
 }
 
-
 html {
   scroll-behavior: smooth;
 }
-
 
 /* Desktop mode on mobile fix */
 @media screen and (max-width: 1024px) {
